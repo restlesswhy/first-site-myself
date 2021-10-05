@@ -1,0 +1,22 @@
+{{ define "index" }}
+
+{{ template "header" }}
+
+      <main role="main" class="inner cover">
+        <h1>look at this shit.</h1>
+        {{ range . }}
+
+        <div class="alert alert-light">
+            <h2>{{ .Title }}</h2>
+            <p>{{ .Anons }}</p>
+            <a href="/post/{{ .Id }}" type="button" class="btn btn-outline-secondary">read more</a>
+            <a href="/delete_post/{{ .Id }}" type="button" class="btn btn-outline-secondary">delete</a>
+        </div>
+
+        {{ end }}
+       
+      </main>
+
+{{ template "footer" }}
+
+{{ end }}
